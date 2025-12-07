@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about Resezy - Find answers to common questions about our restaurant management platform.">
+    <meta name="keywords" content="resezy faq, restaurant software questions, pos system faq, restaurant management help">
+    <meta name="author" content="Bridge Byte Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="FAQ - Resezy Restaurant Management">
+    <meta property="og:description" content="Get answers to frequently asked questions about Resezy restaurant management platform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resezy.com/faq">
+    <link rel="canonical" href="https://resezy.com/faq">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>FAQ - Resezy Restaurant Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .faq-section {
+            padding: 80px 0 100px;
+        }
+        .faq-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 60px;
+        }
+        .faq-sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+        .faq-nav {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .faq-nav-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .faq-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .faq-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .faq-nav-link:hover,
+        .faq-nav-link.active {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+        .faq-nav-link i {
+            width: 18px;
+            height: 18px;
+        }
+        .faq-content {
+            max-width: 800px;
+        }
+        .faq-category {
+            margin-bottom: 50px;
+        }
+        .faq-category-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--gray-100);
+        }
+        .faq-category-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+        .faq-category-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: var(--accent);
+        }
+        .faq-item.active {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            gap: 16px;
+        }
+        .faq-question i {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            color: var(--accent);
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 28px 24px;
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-answer p {
+            margin-bottom: 12px;
+        }
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        .faq-answer ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+        .faq-answer li {
+            margin-bottom: 8px;
+            list-style: disc;
+        }
+        .faq-answer a {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+        .faq-search {
+            margin-bottom: 40px;
+        }
+        .faq-search-wrapper {
+            position: relative;
+        }
+        .faq-search-input {
+            width: 100%;
+            padding: 18px 24px 18px 56px;
+            font-size: 16px;
+            font-family: inherit;
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .faq-search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+        .faq-search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+        .faq-cta {
+            background: var(--gray-50);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .faq-cta h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .faq-cta p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        .faq-cta-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+        @media (max-width: 1024px) {
+            .faq-layout {
+                grid-template-columns: 1fr;
+            }
+            .faq-sidebar {
+                position: relative;
+                top: 0;
+            }
+            .faq-nav {
+                display: flex;
+                overflow-x: auto;
+                padding: 16px;
+            }
+            .faq-nav-title {
+                display: none;
+            }
+            .faq-nav-list {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .faq-nav-link {
+                white-space: nowrap;
+                padding: 10px 16px;
+            }
+        }
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 20px;
+                font-size: 15px;
+            }
+            .faq-answer {
+                padding: 0 20px 20px;
+            }
+            .faq-cta-actions {
+                flex-direction: column;
+            }
+            .faq-cta-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    Resezy
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="features.html" class="nav-link">Features</a></li>
+                        <li><a href="packages.html" class="nav-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="features.html" class="mobile-menu-link">Features</a></li>
+                <li><a href="packages.html" class="mobile-menu-link">Pricing</a></li>
+                <li><a href="how-it-works.html" class="mobile-menu-link">How It Works</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="clients.html" class="mobile-menu-link">Clients</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="support.html" class="mobile-menu-link">Support</a></li>
+            </ul>
+            <div class="mobile-menu-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i data-lucide="chevron-right"></i>
+                <span>FAQ</span>
+            </div>
+            <h1 class="page-header-title">Frequently Asked Questions</h1>
+            <p class="page-header-subtitle">Find answers to common questions about Resezy. Can't find what you're looking for? Contact our support team.</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-layout">
+                <aside class="faq-sidebar">
+                    <nav class="faq-nav">
+                        <h4 class="faq-nav-title">Categories</h4>
+                        <ul class="faq-nav-list">
+                            <li><a href="#general" class="faq-nav-link active"><i data-lucide="help-circle"></i> General</a></li>
+                            <li><a href="#pricing" class="faq-nav-link"><i data-lucide="credit-card"></i> Pricing</a></li>
+                            <li><a href="#features" class="faq-nav-link"><i data-lucide="zap"></i> Features</a></li>
+                            <li><a href="#payments" class="faq-nav-link"><i data-lucide="wallet"></i> Payments</a></li>
+                            <li><a href="#technical" class="faq-nav-link"><i data-lucide="settings"></i> Technical</a></li>
+                            <li><a href="#support" class="faq-nav-link"><i data-lucide="headphones"></i> Support</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                
+                <div class="faq-content">
+                    <div class="faq-search">
+                        <div class="faq-search-wrapper">
+                            <i data-lucide="search" class="faq-search-icon"></i>
+                            <input type="text" class="faq-search-input" placeholder="Search for answers..." id="faqSearch">
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category" id="general">
+                        <div class="faq-category-header">
+                            <div class="faq-category-icon">
+                                <i data-lucide="help-circle"></i>
+                            </div>
+                            <h2 class="faq-category-title">General Questions</h2>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is Resezy?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Resezy is a complete restaurant management SaaS platform that helps restaurant owners manage their entire operation from a single dashboard. It includes features like order management, POS billing, inventory control, staff management, table reservations, and detailed analytics.</p>
+                                <p>Each restaurant gets their own admin panel and customer-facing website to accept online orders and reservations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Who is Resezy for?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Resezy is designed for:</p>
+                                <ul>
+                                    <li>Restaurant owners and managers</li>
+                                    <li>Cafes and coffee shops</li>
+                                    <li>Fast food outlets</li>
+                                    <li>Cloud kitchens</li>
+                                    <li>Food trucks</li>
+                                    <li>Restaurant chains with multiple branches</li>
+                                </ul>
+                                <p>Whether you're a small cafe or a large restaurant chain, Resezy scales to meet your needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I get started with Resezy?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Getting started is easy:</p>
+                                <ul>
+                                    <li>Sign up for a free account on our website</li>
+                                    <li>Set up your restaurant profile</li>
+                                    <li>Add your menu items</li>
+                                    <li>Configure payment methods</li>
+                                    <li>Go live and start taking orders</li>
+                                </ul>
+                                <p>The entire setup takes less than 30 minutes. We also offer a 14-day free trial so you can explore all features before subscribing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is there a free trial available?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We offer a 14-day free trial with full access to all features. No credit card is required to start your trial. At the end of the trial, you can choose to subscribe to a paid plan or continue with our limited Free plan.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Do I need technical knowledge to use Resezy?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Not at all! Resezy is designed to be user-friendly and intuitive. Our interface is simple enough for anyone to use, regardless of technical background. We also provide step-by-step guides, video tutorials, and dedicated customer support to help you get started.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category" id="pricing">
+                        <div class="faq-category-header">
+                            <div class="faq-category-icon">
+                                <i data-lucide="credit-card"></i>
+                            </div>
+                            <h2 class="faq-category-title">Pricing & Plans</h2>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What pricing plans do you offer?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We offer four plans to suit different needs:</p>
+                                <ul>
+                                    <li><strong>Free:</strong> ৳0/month - Up to 50 products, 100 orders/month</li>
+                                    <li><strong>Basic:</strong> ৳999/month - Up to 200 products, unlimited orders</li>
+                                    <li><strong>Premium:</strong> ৳2,499/month - Unlimited products, all features</li>
+                                    <li><strong>Enterprise:</strong> ৳9,999/month - Multi-branch, white-label, dedicated support</li>
+                                </ul>
+                                <p>You can save 20% by choosing annual billing. <a href="packages.html">View detailed pricing comparison</a>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I change my plan later?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can upgrade or downgrade your plan at any time from your account settings. When upgrading, you'll be charged the prorated difference for the remaining billing period. When downgrading, the new rate will apply from your next billing cycle.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Do you charge commission on sales?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, we do not take any commission on your sales. You only pay the fixed monthly or yearly subscription fee. All payments from your customers go directly to your own payment accounts (bKash, Nagad, or bank).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is there a setup fee?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, there are no setup fees for any plan. You only pay the monthly or yearly subscription. For Enterprise customers, we also offer free onboarding, training, and data migration assistance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What payment methods do you accept for subscriptions?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>For subscription payments, we accept:</p>
+                                <ul>
+                                    <li>bKash</li>
+                                    <li>Nagad</li>
+                                    <li>Bank transfer</li>
+                                    <li>Credit/Debit cards (via SSLCommerz)</li>
+                                </ul>
+                                <p>Enterprise customers can also opt for invoice-based billing with flexible payment terms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category" id="features">
+                        <div class="faq-category-header">
+                            <div class="faq-category-icon">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <h2 class="faq-category-title">Features</h2>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What features are included in Resezy?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Resezy includes a comprehensive set of features:</p>
+                                <ul>
+                                    <li>Order Management (dine-in, takeaway, delivery)</li>
+                                    <li>POS & Billing System</li>
+                                    <li>Menu & Product Management</li>
+                                    <li>Table Management & Reservations</li>
+                                    <li>Staff Management (attendance, leave, salary)</li>
+                                    <li>Inventory & Stock Control</li>
+                                    <li>Supplier & Purchase Management</li>
+                                    <li>Expense Tracking</li>
+                                    <li>Financial Reports & Analytics</li>
+                                    <li>Customer Reviews & Promo Codes</li>
+                                    <li>AI Assistant</li>
+                                </ul>
+                                <p><a href="features.html">View all features in detail</a>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Do I get my own restaurant website?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! Every restaurant on Resezy gets their own customer-facing website where customers can browse the menu, place orders, and make table reservations. The website is automatically generated and can be customized with your branding.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can staff access the system?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can create staff accounts with role-based access. Roles include Manager, Kitchen, Cashier, Waiter, and Delivery. Each role has specific permissions, so staff only see what they need. Staff access the same admin panel through their browser - no separate app needed.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Does Resezy support multiple branches?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, multi-branch support is available on our Enterprise plan. You can manage all your restaurant locations from a single dashboard, with consolidated reporting and the ability to configure each branch separately.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is the AI Assistant?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The AI Assistant is powered by Gemini AI and helps with customer support, answering questions about your restaurant, menu, and ordering. It can be customized with your restaurant's information and is available 24/7 to assist customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category" id="payments">
+                        <div class="faq-category-header">
+                            <div class="faq-category-icon">
+                                <i data-lucide="wallet"></i>
+                            </div>
+                            <h2 class="faq-category-title">Payments</h2>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What payment methods can customers use?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Customers can pay using:</p>
+                                <ul>
+                                    <li>bKash (mobile banking)</li>
+                                    <li>Nagad (mobile banking)</li>
+                                    <li>Credit/Debit cards via SSLCommerz</li>
+                                    <li>Cash on delivery</li>
+                                </ul>
+                                <p>You choose which payment methods to enable for your restaurant.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I receive payments from customers?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Payments go directly to your own accounts. You configure your bKash, Nagad, or SSLCommerz merchant credentials in the settings, and all customer payments are deposited directly into your accounts. Resezy does not hold or process your funds.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I set up payment gateways?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>In your admin panel, go to Settings > Payment Methods. Enter your merchant credentials for bKash, Nagad, or SSLCommerz. Our step-by-step guide walks you through the process, or you can contact support for assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category" id="technical">
+                        <div class="faq-category-header">
+                            <div class="faq-category-icon">
+                                <i data-lucide="settings"></i>
+                            </div>
+                            <h2 class="faq-category-title">Technical Questions</h2>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is my data secure?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely. We take security seriously:</p>
+                                <ul>
+                                    <li>All data is encrypted in transit and at rest</li>
+                                    <li>We use secure cloud infrastructure</li>
+                                    <li>Regular automated backups</li>
+                                    <li>Role-based access control</li>
+                                    <li>Regular security audits</li>
+                                </ul>
+                                <p>Your data is stored securely on Google Cloud servers with enterprise-grade protection.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What devices can I use Resezy on?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Resezy is a web-based platform that works on any device with a modern browser:</p>
+                                <ul>
+                                    <li>Desktop computers (Windows, Mac, Linux)</li>
+                                    <li>Laptops</li>
+                                    <li>Tablets (iPad, Android tablets)</li>
+                                    <li>Smartphones (iPhone, Android)</li>
+                                </ul>
+                                <p>The interface is fully responsive and optimized for all screen sizes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Does Resezy work offline?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Resezy requires an internet connection to function as it's a cloud-based system. However, we're working on limited offline capabilities for the POS module that will sync when connection is restored. We recommend having a stable internet connection for best performance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I export my data?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can export your data at any time. Reports can be downloaded in PDF or Excel format. If you ever decide to leave Resezy, we can provide a complete export of all your data.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is your uptime guarantee?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We guarantee 99.9% uptime for all paid plans. Our infrastructure is built on reliable cloud services with redundancy and automatic failover. Enterprise customers receive an SLA with guaranteed uptime and priority support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-category" id="support">
+                        <div class="faq-category-header">
+                            <div class="faq-category-icon">
+                                <i data-lucide="headphones"></i>
+                            </div>
+                            <h2 class="faq-category-title">Support</h2>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How can I contact support?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You can reach our support team through multiple channels:</p>
+                                <ul>
+                                    <li>Email: <a href="mailto:support@resezy.com">support@resezy.com</a></li>
+                                    <li>Live chat on our website</li>
+                                    <li>Phone support (Premium and Enterprise plans)</li>
+                                    <li>AI Assistant for instant answers</li>
+                                </ul>
+                                <p>Support hours are 9 AM - 10 PM, 7 days a week. Enterprise customers get 24/7 support.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Do you offer training?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We provide:</p>
+                                <ul>
+                                    <li>Video tutorials and guides in our Help Center</li>
+                                    <li>Step-by-step documentation</li>
+                                    <li>Live webinars for new users</li>
+                                    <li>One-on-one training sessions (Enterprise plan)</li>
+                                </ul>
+                                <p>Our goal is to help you get the most out of Resezy.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What if I need help setting up?</span>
+                                <i data-lucide="chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We're here to help! Our support team can guide you through setup via chat or call. For Enterprise customers, we offer dedicated onboarding assistance including data migration from your existing system.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-cta">
+                        <h3>Still have questions?</h3>
+                        <p>Can't find the answer you're looking for? Our team is here to help.</p>
+                        <div class="faq-cta-actions">
+                            <a href="contact.html" class="btn btn-primary">
+                                Contact Support
+                                <i data-lucide="arrow-right"></i>
+                            </a>
+                            <a href="ai-assistant.html" class="btn btn-secondary">
+                                <i data-lucide="bot"></i>
+                                Ask AI Assistant
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        Resezy
+                    </a>
+                    <p>Complete restaurant management platform built for modern restaurants. Manage orders, inventory, staff, and more.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="packages.html" class="footer-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="clients.html" class="footer-link">Clients</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="support.html" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="support.html" class="footer-link">Help Center</a></li>
+                        <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@resezy.com" class="footer-link">support@resezy.com</a></li>
+                        <li><a href="tel:+8801XXXXXXXXX" class="footer-link">+880 1XXX-XXXXXX</a></li>
+                        <li><span class="footer-link">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2025 Resezy. All rights reserved. Developed by Bridge Byte Tech.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        const faqSearch = document.getElementById('faqSearch');
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqSearch.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            faqItems.forEach(function(item) {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        const navLinks = document.querySelectorAll('.faq-nav-link');
+        
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.forEach(function(l) {
+                    l.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

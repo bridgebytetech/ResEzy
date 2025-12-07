@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Resezy - Get in touch with our team for sales inquiries, support, or partnership opportunities.">
+    <meta name="keywords" content="contact resezy, restaurant software support, sales inquiry, customer service">
+    <meta name="author" content="Bridge Byte Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact Us - Resezy Restaurant Management">
+    <meta property="og:description" content="Have questions? Get in touch with the Resezy team. We're here to help.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resezy.com/contact">
+    <link rel="canonical" href="https://resezy.com/contact">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Contact Us - Resezy Restaurant Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-section {
+            padding: 80px 0 100px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+        .contact-info {
+            padding-right: 40px;
+        }
+        .contact-info h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .contact-info > p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        .contact-info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .contact-info-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+        }
+        .contact-info-icon {
+            width: 54px;
+            height: 54px;
+            background: var(--accent-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .contact-info-content h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .contact-info-content p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .contact-info-content a {
+            color: var(--accent);
+        }
+        .contact-info-content a:hover {
+            text-decoration: underline;
+        }
+        .contact-social {
+            margin-top: 40px;
+        }
+        .contact-social h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .contact-social-links {
+            display: flex;
+            gap: 12px;
+        }
+        .contact-social-links a {
+            width: 46px;
+            height: 46px;
+            background: var(--gray-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+        .contact-social-links a:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .contact-form-wrapper {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+        }
+        .contact-form-header {
+            margin-bottom: 30px;
+        }
+        .contact-form-header h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .contact-form-header p {
+            font-size: 15px;
+            color: var(--text-light);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .form-label span {
+            color: var(--error);
+        }
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 15px;
+            font-family: inherit;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+        .form-input::placeholder {
+            color: var(--text-light);
+        }
+        textarea.form-input {
+            resize: vertical;
+            min-height: 150px;
+        }
+        select.form-input {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 18px;
+        }
+        .form-submit {
+            margin-top: 10px;
+        }
+        .form-submit .btn {
+            width: 100%;
+            padding: 18px 30px;
+        }
+        .map-section {
+            padding: 0 0 100px;
+        }
+        .map-container {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--gray-200);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 450px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+            color: var(--text-light);
+        }
+        .map-placeholder i {
+            opacity: 0.5;
+        }
+        .quick-contact {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .quick-contact-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .quick-contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+        }
+        .quick-contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--accent);
+        }
+        .quick-contact-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .quick-contact-text {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .quick-contact-link {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .quick-contact-link:hover {
+            gap: 10px;
+        }
+        .faq-mini {
+            padding: 100px 0;
+        }
+        .faq-mini-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .faq-mini-content h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .faq-mini-content > p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 1024px) {
+            .quick-contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                padding-right: 0;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-wrapper {
+                padding: 30px;
+            }
+            .quick-contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-mini-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    Resezy
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="features.html" class="nav-link">Features</a></li>
+                        <li><a href="packages.html" class="nav-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="features.html" class="mobile-menu-link">Features</a></li>
+                <li><a href="packages.html" class="mobile-menu-link">Pricing</a></li>
+                <li><a href="how-it-works.html" class="mobile-menu-link">How It Works</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="clients.html" class="mobile-menu-link">Clients</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="support.html" class="mobile-menu-link">Support</a></li>
+            </ul>
+            <div class="mobile-menu-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i data-lucide="chevron-right"></i>
+                <span>Contact</span>
+            </div>
+            <h1 class="page-header-title">Get In Touch</h1>
+            <p class="page-header-subtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Fill out the form and our team will get back to you within 24 hours. You can also reach us directly using the contact details below.</p>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:support@resezy.com">support@resezy.com</a></p>
+                            <p><a href="mailto:sales@resezy.com">sales@resezy.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+8801XXXXXXXXX">+880 1XXX-XXXXXX</a></p>
+                            <p>Mon - Sat, 9:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Visit Us</h4>
+                            <p>Bridge Byte Tech</p>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday</p>
+                            <p>9:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="contact-social-links">
+                            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <div class="contact-form-header">
+                        <h3>Send us a Message</h3>
+                        <p>We typically respond within 24 hours.</p>
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name <span>*</span></label>
+                                <input type="text" class="form-input" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name <span>*</span></label>
+                                <input type="text" class="form-input" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email <span>*</span></label>
+                                <input type="email" class="form-input" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-input" placeholder="+880 1XXX-XXXXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Subject <span>*</span></label>
+                            <select class="form-input" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="sales">Sales Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="demo">Request Demo</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Restaurant Name</label>
+                            <input type="text" class="form-input" placeholder="Your restaurant name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message <span>*</span></label>
+                            <textarea class="form-input" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Send Message
+                                <i data-lucide="send"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="headphones"></i>
+                    Quick Contact
+                </span>
+                <h2 class="section-title">How Can We Help?</h2>
+                <p class="section-subtitle">Choose the best way to reach us based on your needs.</p>
+            </div>
+            <div class="quick-contact-grid">
+                <div class="quick-contact-card">
+                    <div class="quick-contact-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                    <h3 class="quick-contact-title">Sales Inquiry</h3>
+                    <p class="quick-contact-text">Interested in Resezy for your restaurant? Talk to our sales team about pricing and features.</p>
+                    <a href="mailto:sales@resezy.com" class="quick-contact-link">
+                        sales@resezy.com
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="quick-contact-card">
+                    <div class="quick-contact-icon">
+                        <i data-lucide="life-buoy"></i>
+                    </div>
+                    <h3 class="quick-contact-title">Technical Support</h3>
+                    <p class="quick-contact-text">Need help with your Resezy account? Our support team is ready to assist you.</p>
+                    <a href="support.html" class="quick-contact-link">
+                        Visit Help Center
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="quick-contact-card">
+                    <div class="quick-contact-icon">
+                        <i data-lucide="handshake"></i>
+                    </div>
+                    <h3 class="quick-contact-title">Partnership</h3>
+                    <p class="quick-contact-text">Interested in partnering with us? Let's explore opportunities together.</p>
+                    <a href="mailto:partners@resezy.com" class="quick-contact-link">
+                        partners@resezy.com
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i data-lucide="map-pin" size="48"></i>
+                    <p>Map will be displayed here</p>
+                    <p style="font-size: 14px;">Dhaka, Bangladesh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-mini">
+        <div class="container">
+            <div class="faq-mini-grid">
+                <div class="faq-mini-content">
+                    <span class="section-label">
+                        <i data-lucide="help-circle"></i>
+                        FAQ
+                    </span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find quick answers to common questions. For more details, visit our comprehensive FAQ page.</p>
+                    <a href="faq.html" class="btn btn-outline">
+                        View All FAQs
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="faq-mini-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How quickly can I get started?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            You can set up your restaurant on Resezy in under 30 minutes. Our intuitive interface guides you through the process step by step.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer a free trial?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We offer a 14-day free trial with full access to all features. No credit card required to start.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What payment methods do you support?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Resezy supports bKash, Nagad, SSLCommerz for card payments, and cash. Each restaurant configures their own payment accounts.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is my data secure?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely. We use enterprise-grade security with encrypted data storage and secure connections. Your data is backed up regularly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Your Restaurant?</h2>
+            <p class="cta-subtitle">Join 500+ restaurants already using Resezy. Start your free trial today.</p>
+            <div class="cta-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">
+                    Start Free Trial
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="packages.html" class="btn btn-secondary btn-lg">
+                    View Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        Resezy
+                    </a>
+                    <p>Complete restaurant management platform built for modern restaurants. Manage orders, inventory, staff, and more.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="packages.html" class="footer-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="clients.html" class="footer-link">Clients</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="support.html" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="support.html" class="footer-link">Help Center</a></li>
+                        <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@resezy.com" class="footer-link">support@resezy.com</a></li>
+                        <li><a href="tel:+8801XXXXXXXXX" class="footer-link">+880 1XXX-XXXXXX</a></li>
+                        <li><span class="footer-link">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2025 Resezy. All rights reserved. Developed by Bridge Byte Tech.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

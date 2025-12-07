@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how Resezy works - Simple steps to set up your restaurant management system and start taking orders.">
+    <meta name="keywords" content="how resezy works, restaurant setup, POS setup, restaurant onboarding">
+    <meta name="author" content="Bridge Byte Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="How It Works - Resezy Restaurant Management">
+    <meta property="og:description" content="Get started with Resezy in minutes. Simple setup process for your restaurant.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resezy.com/how-it-works">
+    <link rel="canonical" href="https://resezy.com/how-it-works">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>How It Works - Resezy Restaurant Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .process-section {
+            padding: 100px 0;
+        }
+        .process-section:nth-child(even) {
+            background: var(--gray-50);
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .process-grid.reverse {
+            direction: rtl;
+        }
+        .process-grid.reverse > * {
+            direction: ltr;
+        }
+        .process-content {
+            max-width: 500px;
+        }
+        .process-step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+        .process-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .process-description {
+            font-size: 17px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .process-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .process-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .process-feature-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .process-feature-text {
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .process-feature-text strong {
+            color: var(--primary);
+        }
+        .process-image {
+            position: relative;
+        }
+        .process-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            border: 1px solid var(--gray-200);
+        }
+        .process-image-badge {
+            position: absolute;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gray-100);
+        }
+        .process-image-badge-1 {
+            bottom: -20px;
+            left: -20px;
+        }
+        .process-image-badge-2 {
+            top: 20px;
+            right: -20px;
+        }
+        .badge-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .badge-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--success);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+        .badge-icon.blue {
+            background: var(--accent);
+        }
+        .badge-text h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+        .badge-text p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        .timeline-section {
+            padding: 100px 0;
+            background: var(--primary);
+        }
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .timeline-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+        .timeline-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+        .timeline-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .timeline-item {
+            text-align: center;
+            position: relative;
+        }
+        .timeline-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+            border: 4px solid var(--primary);
+        }
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .timeline-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+        .video-section {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .video-wrapper {
+            position: relative;
+            background: var(--primary);
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-placeholder {
+            text-align: center;
+            color: var(--white);
+        }
+        .video-play-btn {
+            width: 100px;
+            height: 100px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .video-play-btn:hover {
+            transform: scale(1.1);
+            background: var(--accent-hover);
+        }
+        .video-play-btn i {
+            margin-left: 5px;
+        }
+        .video-placeholder p {
+            font-size: 18px;
+            opacity: 0.8;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .benefit-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+        }
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent);
+        }
+        .benefit-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .benefit-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        @media (max-width: 1024px) {
+            .timeline-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .timeline-grid::before {
+                display: none;
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .process-grid.reverse {
+                direction: ltr;
+            }
+            .process-title {
+                font-size: 28px;
+            }
+            .process-image-badge {
+                display: none;
+            }
+            .timeline-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    Resezy
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="features.html" class="nav-link">Features</a></li>
+                        <li><a href="packages.html" class="nav-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="features.html" class="mobile-menu-link">Features</a></li>
+                <li><a href="packages.html" class="mobile-menu-link">Pricing</a></li>
+                <li><a href="how-it-works.html" class="mobile-menu-link">How It Works</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="clients.html" class="mobile-menu-link">Clients</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="support.html" class="mobile-menu-link">Support</a></li>
+            </ul>
+            <div class="mobile-menu-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i data-lucide="chevron-right"></i>
+                <span>How It Works</span>
+            </div>
+            <h1 class="page-header-title">How Resezy Works</h1>
+            <p class="page-header-subtitle">Get your restaurant online in just a few simple steps. No technical knowledge required.</p>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="process-grid">
+                <div class="process-content">
+                    <span class="process-step-badge">Step 1</span>
+                    <h2 class="process-title">Create Your Account</h2>
+                    <p class="process-description">Sign up in under 2 minutes. Just enter your basic information and restaurant details to get started with your free trial.</p>
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Quick registration</strong> - Only email and password needed
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>14-day free trial</strong> - No credit card required
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Instant access</strong> - Start using immediately after signup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-image">
+                    <img src="images/step-1-signup.png" alt="Create Account">
+                    <div class="process-image-badge process-image-badge-1">
+                        <div class="badge-content">
+                            <div class="badge-icon">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <div class="badge-text">
+                                <h4>Quick Setup</h4>
+                                <p>Under 2 minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="process-grid reverse">
+                <div class="process-content">
+                    <span class="process-step-badge">Step 2</span>
+                    <h2 class="process-title">Set Up Your Restaurant</h2>
+                    <p class="process-description">Configure your restaurant profile with your branding, location, business hours, and contact information. Make it uniquely yours.</p>
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Custom branding</strong> - Upload logo, set colors and theme
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Business hours</strong> - Set opening times for each day
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Location setup</strong> - Add address and delivery zones
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-image">
+                    <img src="images/step-2-setup.png" alt="Restaurant Setup">
+                    <div class="process-image-badge process-image-badge-2">
+                        <div class="badge-content">
+                            <div class="badge-icon blue">
+                                <i data-lucide="palette"></i>
+                            </div>
+                            <div class="badge-text">
+                                <h4>Your Brand</h4>
+                                <p>Custom styling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="process-grid">
+                <div class="process-content">
+                    <span class="process-step-badge">Step 3</span>
+                    <h2 class="process-title">Add Your Menu</h2>
+                    <p class="process-description">Create categories and add your menu items with photos, descriptions, prices, and variants. Our intuitive interface makes it easy.</p>
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Bulk upload</strong> - Import menu from spreadsheet
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Product variants</strong> - Sizes, add-ons, and modifiers
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Photo gallery</strong> - Multiple images per item
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-image">
+                    <img src="images/step-3-menu.png" alt="Add Menu">
+                    <div class="process-image-badge process-image-badge-1">
+                        <div class="badge-content">
+                            <div class="badge-icon">
+                                <i data-lucide="utensils"></i>
+                            </div>
+                            <div class="badge-text">
+                                <h4>Menu Items</h4>
+                                <p>Easy to manage</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="process-grid reverse">
+                <div class="process-content">
+                    <span class="process-step-badge">Step 4</span>
+                    <h2 class="process-title">Configure Payments</h2>
+                    <p class="process-description">Connect your payment accounts to receive payments directly. We support bKash, Nagad, SSLCommerz, and cash payments.</p>
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Your own accounts</strong> - Payments go directly to you
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Multiple options</strong> - bKash, Nagad, Cards, Cash
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>No commission</strong> - We don't take any cut from sales
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-image">
+                    <img src="images/step-4-payment.png" alt="Configure Payments">
+                    <div class="process-image-badge process-image-badge-2">
+                        <div class="badge-content">
+                            <div class="badge-icon blue">
+                                <i data-lucide="credit-card"></i>
+                            </div>
+                            <div class="badge-text">
+                                <h4>Secure</h4>
+                                <p>Direct payments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="process-grid">
+                <div class="process-content">
+                    <span class="process-step-badge">Step 5</span>
+                    <h2 class="process-title">Go Live & Start Selling</h2>
+                    <p class="process-description">Your restaurant website is ready. Share your link, start taking orders, and manage everything from your dashboard.</p>
+                    <div class="process-features">
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Instant website</strong> - Your own restaurant page
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Real-time orders</strong> - Notifications for new orders
+                            </div>
+                        </div>
+                        <div class="process-feature">
+                            <div class="process-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <div class="process-feature-text">
+                                <strong>Full dashboard</strong> - Manage everything in one place
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-image">
+                    <img src="images/step-5-live.png" alt="Go Live">
+                    <div class="process-image-badge process-image-badge-1">
+                        <div class="badge-content">
+                            <div class="badge-icon">
+                                <i data-lucide="rocket"></i>
+                            </div>
+                            <div class="badge-text">
+                                <h4>You're Live!</h4>
+                                <p>Start selling now</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline-header">
+                <h2>Complete Setup in 30 Minutes</h2>
+                <p>Here's the typical timeline to get your restaurant fully operational</p>
+            </div>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <h3 class="timeline-title">Sign Up</h3>
+                    <p class="timeline-desc">2 minutes</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <h3 class="timeline-title">Profile Setup</h3>
+                    <p class="timeline-desc">5 minutes</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <h3 class="timeline-title">Add Menu</h3>
+                    <p class="timeline-desc">15 minutes</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <h3 class="timeline-title">Payments</h3>
+                    <p class="timeline-desc">5 minutes</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">5</div>
+                    <h3 class="timeline-title">Go Live!</h3>
+                    <p class="timeline-desc">3 minutes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="play"></i>
+                    Video Tutorial
+                </span>
+                <h2 class="section-title">Watch How It Works</h2>
+                <p class="section-subtitle">See Resezy in action with our quick video walkthrough.</p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <div class="video-placeholder">
+                        <div class="video-play-btn">
+                            <i data-lucide="play" size="40"></i>
+                        </div>
+                        <p>Click to play demo video</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="sparkles"></i>
+                    Benefits
+                </span>
+                <h2 class="section-title">Why Choose Resezy?</h2>
+                <p class="section-subtitle">Here's what makes us different from other solutions.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="benefit-title">Quick Setup</h3>
+                    <p class="benefit-text">Get started in under 30 minutes. No technical skills or coding required.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3 class="benefit-title">Secure & Reliable</h3>
+                    <p class="benefit-text">99.9% uptime guarantee with enterprise-grade security for your data.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <h3 class="benefit-title">Dedicated Support</h3>
+                    <p class="benefit-text">Our team is here to help you succeed. Get support when you need it.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3 class="benefit-title">Grow Your Business</h3>
+                    <p class="benefit-text">Tools and insights to help you increase sales and reduce costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-subtitle">Join 500+ restaurants already using Resezy. Start your free trial today.</p>
+            <div class="cta-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">
+                    Start Free Trial
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-secondary btn-lg">
+                    Schedule Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        Resezy
+                    </a>
+                    <p>Complete restaurant management platform built for modern restaurants. Manage orders, inventory, staff, and more.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="packages.html" class="footer-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="clients.html" class="footer-link">Clients</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="support.html" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="support.html" class="footer-link">Help Center</a></li>
+                        <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@resezy.com" class="footer-link">support@resezy.com</a></li>
+                        <li><a href="tel:+8801XXXXXXXXX" class="footer-link">+880 1XXX-XXXXXX</a></li>
+                        <li><span class="footer-link">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2025 Resezy. All rights reserved. Developed by Bridge Byte Tech.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

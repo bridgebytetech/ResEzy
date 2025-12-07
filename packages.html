@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resezy pricing plans - Choose the perfect plan for your restaurant. Free, Basic, Premium, and Enterprise options available.">
+    <meta name="keywords" content="restaurant software pricing, POS pricing, restaurant management cost, subscription plans">
+    <meta name="author" content="Bridge Byte Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Pricing - Resezy Restaurant Management">
+    <meta property="og:description" content="Affordable pricing plans for restaurants of all sizes. Start free, upgrade as you grow.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resezy.com/packages">
+    <link rel="canonical" href="https://resezy.com/packages">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Pricing Plans - Resezy Restaurant Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+        .pricing-toggle-label {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        .pricing-toggle-label.active {
+            color: var(--primary);
+        }
+        .pricing-toggle-switch {
+            width: 60px;
+            height: 32px;
+            background: var(--gray-200);
+            border-radius: 100px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .pricing-toggle-switch.active {
+            background: var(--accent);
+        }
+        .pricing-toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: var(--white);
+            border-radius: 50%;
+            top: 4px;
+            left: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .pricing-toggle-switch.active::after {
+            left: 32px;
+        }
+        .pricing-save-badge {
+            background: var(--success);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+        .pricing-card-full {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 50px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .pricing-card-full:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-card-full.popular {
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15);
+        }
+        .pricing-card-header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--gray-200);
+            margin-bottom: 30px;
+        }
+        .pricing-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent);
+        }
+        .pricing-card-full.popular .pricing-icon {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .pricing-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .pricing-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text);
+        }
+        .pricing-feature-item i {
+            color: var(--success);
+            flex-shrink: 0;
+        }
+        .pricing-feature-item.disabled {
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+        .pricing-feature-item.disabled i {
+            color: var(--gray-300);
+        }
+        .pricing-card-footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+        .compare-table th,
+        .compare-table td {
+            padding: 20px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .compare-table th {
+            background: var(--gray-50);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .compare-table th:first-child {
+            text-align: left;
+        }
+        .compare-table th:not(:first-child) {
+            text-align: center;
+        }
+        .compare-table td:not(:first-child) {
+            text-align: center;
+        }
+        .compare-table td {
+            font-size: 14px;
+            color: var(--text);
+        }
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+        .compare-table .feature-name {
+            font-weight: 500;
+        }
+        .compare-table .check {
+            color: var(--success);
+        }
+        .compare-table .cross {
+            color: var(--gray-300);
+        }
+        .compare-category {
+            background: var(--accent-light) !important;
+            font-weight: 600 !important;
+            color: var(--accent) !important;
+        }
+        .guarantee-section {
+            background: var(--gray-50);
+            border-radius: 24px;
+            padding: 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--white);
+        }
+        .guarantee-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .guarantee-text {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    Resezy
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="features.html" class="nav-link">Features</a></li>
+                        <li><a href="packages.html" class="nav-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="features.html" class="mobile-menu-link">Features</a></li>
+                <li><a href="packages.html" class="mobile-menu-link">Pricing</a></li>
+                <li><a href="how-it-works.html" class="mobile-menu-link">How It Works</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="clients.html" class="mobile-menu-link">Clients</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="support.html" class="mobile-menu-link">Support</a></li>
+            </ul>
+            <div class="mobile-menu-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i data-lucide="chevron-right"></i>
+                <span>Pricing</span>
+            </div>
+            <h1 class="page-header-title">Simple, Transparent Pricing</h1>
+            <p class="page-header-subtitle">Choose the plan that fits your restaurant. No hidden fees, no surprises.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="pricing-toggle">
+                <span class="pricing-toggle-label active" data-period="monthly">Monthly</span>
+                <div class="pricing-toggle-switch" id="pricingToggle"></div>
+                <span class="pricing-toggle-label" data-period="yearly">Yearly</span>
+                <span class="pricing-save-badge">Save 20%</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card-full">
+                    <div class="pricing-card-header">
+                        <div class="pricing-icon">
+                            <i data-lucide="leaf"></i>
+                        </div>
+                        <div class="pricing-name">Free</div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">৳</span>
+                            <span class="pricing-amount" data-monthly="0" data-yearly="0">0</span>
+                        </div>
+                        <div class="pricing-period">Forever free</div>
+                    </div>
+                    <div class="pricing-features-grid">
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Up to 50 products
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            100 orders/month
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Basic POS
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Order management
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Basic reports
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Email support
+                        </div>
+                        <div class="pricing-feature-item disabled">
+                            <i data-lucide="x"></i>
+                            Staff management
+                        </div>
+                        <div class="pricing-feature-item disabled">
+                            <i data-lucide="x"></i>
+                            Inventory control
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="get-started.html" class="btn btn-secondary" style="width: 100%;">Get Started Free</a>
+                    </div>
+                </div>
+                <div class="pricing-card-full">
+                    <div class="pricing-card-header">
+                        <div class="pricing-icon">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <div class="pricing-name">Basic</div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">৳</span>
+                            <span class="pricing-amount" data-monthly="999" data-yearly="799">999</span>
+                        </div>
+                        <div class="pricing-period">per month</div>
+                    </div>
+                    <div class="pricing-features-grid">
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Up to 200 products
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Unlimited orders
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Full POS system
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Table management
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Staff management
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Basic inventory
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Standard reports
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Email & chat support
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="get-started.html" class="btn btn-secondary" style="width: 100%;">Start 14-Day Trial</a>
+                    </div>
+                </div>
+                <div class="pricing-card-full popular">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-card-header">
+                        <div class="pricing-icon">
+                            <i data-lucide="crown"></i>
+                        </div>
+                        <div class="pricing-name">Premium</div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">৳</span>
+                            <span class="pricing-amount" data-monthly="2,499" data-yearly="1,999">2,499</span>
+                        </div>
+                        <div class="pricing-period">per month</div>
+                    </div>
+                    <div class="pricing-features-grid">
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Unlimited products
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Unlimited orders
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            All POS features
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Reservations
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Full HR module
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Advanced inventory
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Financial reports
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Priority support
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="get-started.html" class="btn btn-primary" style="width: 100%;">Start 14-Day Trial</a>
+                    </div>
+                </div>
+                <div class="pricing-card-full">
+                    <div class="pricing-card-header">
+                        <div class="pricing-icon">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <div class="pricing-name">Enterprise</div>
+                        <div class="pricing-price">
+                            <span class="pricing-currency">৳</span>
+                            <span class="pricing-amount" data-monthly="9,999" data-yearly="7,999">9,999</span>
+                        </div>
+                        <div class="pricing-period">per month</div>
+                    </div>
+                    <div class="pricing-features-grid">
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Multi-branch support
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            White-label option
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            All Premium features
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Custom integrations
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            API access
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            Dedicated manager
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            24/7 phone support
+                        </div>
+                        <div class="pricing-feature-item">
+                            <i data-lucide="check"></i>
+                            SLA guarantee
+                        </div>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="list-checks"></i>
+                    Compare Plans
+                </span>
+                <h2 class="section-title">Feature Comparison</h2>
+                <p class="section-subtitle">See what's included in each plan.</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Feature</th>
+                            <th style="width: 17.5%;">Free</th>
+                            <th style="width: 17.5%;">Basic</th>
+                            <th style="width: 17.5%;">Premium</th>
+                            <th style="width: 17.5%;">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="compare-category">Products & Orders</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Products</td>
+                            <td>50</td>
+                            <td>200</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Orders per month</td>
+                            <td>100</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Categories</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Product variants</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="compare-category">POS & Billing</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Basic POS</td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Split payments</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Multiple payment methods</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Custom receipt</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="compare-category">Table & Reservations</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Table management</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Online reservations</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Reservation reminders</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="compare-category">Staff Management</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Staff accounts</td>
+                            <td>1</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Attendance tracking</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Leave management</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Salary management</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="compare-category">Inventory & Finance</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Basic inventory</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Supplier management</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Purchase orders</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Expense tracking</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">P&L reports</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="compare-category">Support & Extras</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Email support</td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Chat support</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Phone support</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">24/7 support</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Multi-branch</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">White-label</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">API access</td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="cross"><i data-lucide="x"></i></td>
+                            <td class="check"><i data-lucide="check"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="guarantee-section">
+                <div class="guarantee-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <h3 class="guarantee-title">14-Day Money Back Guarantee</h3>
+                <p class="guarantee-text">Try Resezy risk-free. If you're not satisfied with our platform within the first 14 days, we'll refund your payment in full. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="help-circle"></i>
+                    FAQ
+                </span>
+                <h2 class="section-title">Pricing Questions</h2>
+                <p class="section-subtitle">Common questions about our pricing and plans.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I switch plans later?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll be charged the prorated difference. When downgrading, the new rate applies from the next billing cycle.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is there a setup fee?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No, there are no setup fees for any plan. You only pay the monthly or yearly subscription fee. For Enterprise customers, we offer free onboarding and training.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you take commission on sales?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No, we don't take any commission on your sales. Payments from customers go directly to your account. You only pay the fixed monthly subscription fee.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We accept bKash, Nagad, and bank transfers for subscription payments. For Enterprise plans, we also offer invoice-based billing with flexible payment terms.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens when my trial ends?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        After your 14-day trial, you can choose to subscribe to a paid plan or continue with our Free plan. Your data will be preserved, and you can upgrade anytime.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-subtitle">Join 500+ restaurants already using Resezy. Start your free trial today.</p>
+            <div class="cta-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">
+                    Start Free Trial
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-secondary btn-lg">
+                    Talk to Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        Resezy
+                    </a>
+                    <p>Complete restaurant management platform built for modern restaurants. Manage orders, inventory, staff, and more.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="packages.html" class="footer-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="clients.html" class="footer-link">Clients</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="support.html" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="support.html" class="footer-link">Help Center</a></li>
+                        <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@resezy.com" class="footer-link">support@resezy.com</a></li>
+                        <li><a href="tel:+8801XXXXXXXXX" class="footer-link">+880 1XXX-XXXXXX</a></li>
+                        <li><span class="footer-link">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2025 Resezy. All rights reserved. Developed by Bridge Byte Tech.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        const pricingToggle = document.getElementById('pricingToggle');
+        const monthlyLabel = document.querySelector('[data-period="monthly"]');
+        const yearlyLabel = document.querySelector('[data-period="yearly"]');
+        const priceAmounts = document.querySelectorAll('.pricing-amount');
+        
+        let isYearly = false;
+        
+        pricingToggle.addEventListener('click', function() {
+            isYearly = !isYearly;
+            pricingToggle.classList.toggle('active', isYearly);
+            monthlyLabel.classList.toggle('active', !isYearly);
+            yearlyLabel.classList.toggle('active', isYearly);
+            
+            priceAmounts.forEach(function(el) {
+                const monthly = el.getAttribute('data-monthly');
+                const yearly = el.getAttribute('data-yearly');
+                el.textContent = isYearly ? yearly : monthly;
+            });
+        });
+    </script>
+</body>
+</html>

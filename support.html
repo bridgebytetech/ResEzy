@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resezy Support Center - Get help with your restaurant management platform. FAQs, tutorials, and contact support.">
+    <meta name="keywords" content="resezy support, help center, restaurant software help, customer support">
+    <meta name="author" content="Bridge Byte Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Support Center - Resezy Restaurant Management">
+    <meta property="og:description" content="Get help with Resezy. Browse FAQs, tutorials, and contact our support team.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resezy.com/support">
+    <link rel="canonical" href="https://resezy.com/support">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Support Center - Resezy Restaurant Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .support-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            text-align: center;
+        }
+        .support-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .support-hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .support-search {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .support-search-wrapper {
+            position: relative;
+        }
+        .support-search-input {
+            width: 100%;
+            padding: 20px 24px 20px 60px;
+            font-size: 17px;
+            font-family: inherit;
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+        .support-search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+        }
+        .support-search-icon {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+        .support-search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 12px 24px;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .support-search-btn:hover {
+            background: var(--accent-hover);
+        }
+        .quick-help {
+            padding: 80px 0;
+        }
+        .quick-help-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .quick-help-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .quick-help-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+        }
+        .quick-help-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        .quick-help-card:hover .quick-help-icon {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .quick-help-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .quick-help-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .topics-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .topic-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        .topic-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        .topic-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+        .topic-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .topic-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .topic-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: var(--gray-50);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+        .topic-link:hover {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+        .topic-link i {
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .topic-link:hover i {
+            opacity: 1;
+        }
+        .topic-view-all {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .topic-view-all:hover {
+            gap: 10px;
+        }
+        .tutorials-section {
+            padding: 100px 0;
+        }
+        .tutorials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .tutorial-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+        .tutorial-thumbnail {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tutorial-play {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tutorial-play:hover {
+            transform: scale(1.1);
+        }
+        .tutorial-play i {
+            margin-left: 3px;
+        }
+        .tutorial-duration {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            padding: 6px 12px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+        .tutorial-content {
+            padding: 24px;
+        }
+        .tutorial-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 100px;
+            margin-bottom: 12px;
+        }
+        .tutorial-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .tutorial-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .contact-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+        }
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-light);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--accent);
+        }
+        .contact-card:hover .contact-icon {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .contact-text {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .contact-info {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .contact-hours {
+            font-size: 13px;
+            color: var(--text-light);
+            padding: 12px 20px;
+            background: var(--gray-50);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .status-section {
+            padding: 60px 0;
+            background: var(--white);
+        }
+        .status-card {
+            background: var(--gray-50);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .status-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .status-indicator {
+            width: 16px;
+            height: 16px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+        }
+        .status-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .status-content p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .status-link {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-link:hover {
+            gap: 10px;
+        }
+        .popular-articles {
+            padding: 100px 0;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .article-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+        }
+        .article-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gray-50);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .article-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .article-content p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .article-arrow {
+            margin-left: auto;
+            color: var(--gray-300);
+            transition: all 0.3s ease;
+        }
+        .article-card:hover .article-arrow {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+        .ai-support {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+        }
+        .ai-support-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .ai-support-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        .ai-support-content p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .ai-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .ai-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .ai-feature i {
+            color: var(--success);
+        }
+        .ai-support-preview {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+        .ai-preview-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-100);
+            margin-bottom: 20px;
+        }
+        .ai-preview-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+        .ai-preview-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .ai-preview-info p {
+            font-size: 13px;
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ai-preview-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .ai-preview-message {
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .ai-preview-message.bot {
+            background: var(--gray-50);
+            color: var(--text);
+            border-bottom-left-radius: 4px;
+        }
+        .ai-preview-message.user {
+            background: var(--accent);
+            color: var(--white);
+            border-bottom-right-radius: 4px;
+            align-self: flex-end;
+            max-width: 80%;
+        }
+        @media (max-width: 1024px) {
+            .quick-help-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .topics-grid,
+            .tutorials-grid,
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .ai-support-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+        @media (max-width: 768px) {
+            .support-hero h1 {
+                font-size: 36px;
+            }
+            .support-search-btn {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                width: 100%;
+                margin-top: 12px;
+            }
+            .quick-help-grid,
+            .topics-grid,
+            .tutorials-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .status-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .status-left {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    Resezy
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="features.html" class="nav-link">Features</a></li>
+                        <li><a href="packages.html" class="nav-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="features.html" class="mobile-menu-link">Features</a></li>
+                <li><a href="packages.html" class="mobile-menu-link">Pricing</a></li>
+                <li><a href="how-it-works.html" class="mobile-menu-link">How It Works</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="clients.html" class="mobile-menu-link">Clients</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="support.html" class="mobile-menu-link">Support</a></li>
+            </ul>
+            <div class="mobile-menu-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="support-hero">
+        <div class="container">
+            <h1>How Can We Help You?</h1>
+            <p>Search our knowledge base or browse topics below to find the answers you need.</p>
+            <div class="support-search">
+                <div class="support-search-wrapper">
+                    <i data-lucide="search" class="support-search-icon"></i>
+                    <input type="text" class="support-search-input" placeholder="Search for help articles...">
+                    <button class="support-search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-help">
+        <div class="container">
+            <div class="quick-help-grid">
+                <a href="faq.html#general" class="quick-help-card">
+                    <div class="quick-help-icon">
+                        <i data-lucide="rocket"></i>
+                    </div>
+                    <h3 class="quick-help-title">Getting Started</h3>
+                    <p class="quick-help-text">New to Resezy? Start here for setup guides and basics.</p>
+                </a>
+                <a href="faq.html#features" class="quick-help-card">
+                    <div class="quick-help-icon">
+                        <i data-lucide="settings"></i>
+                    </div>
+                    <h3 class="quick-help-title">Features Guide</h3>
+                    <p class="quick-help-text">Learn how to use all features of the platform.</p>
+                </a>
+                <a href="faq.html#pricing" class="quick-help-card">
+                    <div class="quick-help-icon">
+                        <i data-lucide="credit-card"></i>
+                    </div>
+                    <h3 class="quick-help-title">Billing & Plans</h3>
+                    <p class="quick-help-text">Questions about pricing, billing, and subscriptions.</p>
+                </a>
+                <a href="faq.html#technical" class="quick-help-card">
+                    <div class="quick-help-icon">
+                        <i data-lucide="wrench"></i>
+                    </div>
+                    <h3 class="quick-help-title">Troubleshooting</h3>
+                    <p class="quick-help-text">Solutions to common issues and problems.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="topics-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="book-open"></i>
+                    Help Topics
+                </span>
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Find detailed guides and documentation for every feature.</p>
+            </div>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <i data-lucide="shopping-cart"></i>
+                        </div>
+                        <h3 class="topic-title">Orders & POS</h3>
+                    </div>
+                    <div class="topic-links">
+                        <a href="#" class="topic-link">
+                            How to create an order
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Managing order status
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Split payment options
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Printing receipts
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="topic-view-all">
+                        View all articles
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <i data-lucide="utensils-crossed"></i>
+                        </div>
+                        <h3 class="topic-title">Menu Management</h3>
+                    </div>
+                    <div class="topic-links">
+                        <a href="#" class="topic-link">
+                            Adding menu items
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Creating categories
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Product variants setup
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Bulk import menu
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="topic-view-all">
+                        View all articles
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="topic-title">Staff Management</h3>
+                    </div>
+                    <div class="topic-links">
+                        <a href="#" class="topic-link">
+                            Adding staff members
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Attendance tracking
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Leave management
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Salary processing
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="topic-view-all">
+                        View all articles
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <i data-lucide="package"></i>
+                        </div>
+                        <h3 class="topic-title">Inventory</h3>
+                    </div>
+                    <div class="topic-links">
+                        <a href="#" class="topic-link">
+                            Stock management basics
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Setting low stock alerts
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Supplier management
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Purchase orders
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="topic-view-all">
+                        View all articles
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <i data-lucide="credit-card"></i>
+                        </div>
+                        <h3 class="topic-title">Payments</h3>
+                    </div>
+                    <div class="topic-links">
+                        <a href="#" class="topic-link">
+                            Setting up bKash
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Setting up Nagad
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            SSLCommerz integration
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Payment troubleshooting
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="topic-view-all">
+                        View all articles
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <i data-lucide="bar-chart-3"></i>
+                        </div>
+                        <h3 class="topic-title">Reports & Analytics</h3>
+                    </div>
+                    <div class="topic-links">
+                        <a href="#" class="topic-link">
+                            Understanding dashboard
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Sales reports
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Financial reports
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                        <a href="#" class="topic-link">
+                            Exporting data
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="topic-view-all">
+                        View all articles
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tutorials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="play-circle"></i>
+                    Video Tutorials
+                </span>
+                <h2 class="section-title">Learn with Videos</h2>
+                <p class="section-subtitle">Step-by-step video guides to help you master Resezy.</p>
+            </div>
+            <div class="tutorials-grid">
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="tutorial-play">
+                            <i data-lucide="play" size="24"></i>
+                        </div>
+                        <span class="tutorial-duration">5:32</span>
+                    </div>
+                    <div class="tutorial-content">
+                        <span class="tutorial-tag">Getting Started</span>
+                        <h3 class="tutorial-title">Complete Setup Guide for Beginners</h3>
+                        <p class="tutorial-desc">Learn how to set up your restaurant from scratch in under 30 minutes.</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="tutorial-play">
+                            <i data-lucide="play" size="24"></i>
+                        </div>
+                        <span class="tutorial-duration">8:15</span>
+                    </div>
+                    <div class="tutorial-content">
+                        <span class="tutorial-tag">Orders</span>
+                        <h3 class="tutorial-title">Mastering Order Management</h3>
+                        <p class="tutorial-desc">Handle dine-in, takeaway, and delivery orders like a pro.</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="tutorial-play">
+                            <i data-lucide="play" size="24"></i>
+                        </div>
+                        <span class="tutorial-duration">6:48</span>
+                    </div>
+                    <div class="tutorial-content">
+                        <span class="tutorial-tag">Inventory</span>
+                        <h3 class="tutorial-title">Inventory Management Deep Dive</h3>
+                        <p class="tutorial-desc">Track stock, manage suppliers, and prevent stockouts.</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="tutorial-play">
+                            <i data-lucide="play" size="24"></i>
+                        </div>
+                        <span class="tutorial-duration">4:20</span>
+                    </div>
+                    <div class="tutorial-content">
+                        <span class="tutorial-tag">Payments</span>
+                        <h3 class="tutorial-title">Setting Up Payment Gateways</h3>
+                        <p class="tutorial-desc">Configure bKash, Nagad, and card payments.</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="tutorial-play">
+                            <i data-lucide="play" size="24"></i>
+                        </div>
+                        <span class="tutorial-duration">7:55</span>
+                    </div>
+                    <div class="tutorial-content">
+                        <span class="tutorial-tag">Staff</span>
+                        <h3 class="tutorial-title">Complete Staff Management Guide</h3>
+                        <p class="tutorial-desc">Attendance, leaves, and salary management explained.</p>
+                    </div>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="tutorial-play">
+                            <i data-lucide="play" size="24"></i>
+                        </div>
+                        <span class="tutorial-duration">5:10</span>
+                    </div>
+                    <div class="tutorial-content">
+                        <span class="tutorial-tag">Reports</span>
+                        <h3 class="tutorial-title">Understanding Your Analytics</h3>
+                        <p class="tutorial-desc">Make data-driven decisions with powerful reports.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="status-section">
+        <div class="container">
+            <div class="status-card">
+                <div class="status-left">
+                    <div class="status-indicator"></div>
+                    <div class="status-content">
+                        <h3>All Systems Operational</h3>
+                        <p>Last updated: Just now</p>
+                    </div>
+                </div>
+                <a href="#" class="status-link">
+                    View System Status
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-articles">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="trending-up"></i>
+                    Popular Articles
+                </span>
+                <h2 class="section-title">Most Viewed Help Articles</h2>
+                <p class="section-subtitle">Quick answers to the most common questions.</p>
+            </div>
+            <div class="articles-grid">
+                <a href="#" class="article-card">
+                    <div class="article-icon">
+                        <i data-lucide="user-plus"></i>
+                    </div>
+                    <div class="article-content">
+                        <h4>How to create a staff account</h4>
+                        <p>Learn how to add new staff members with role-based access.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="article-arrow"></i>
+                </a>
+                <a href="#" class="article-card">
+                    <div class="article-icon">
+                        <i data-lucide="printer"></i>
+                    </div>
+                    <div class="article-content">
+                        <h4>Setting up receipt printer</h4>
+                        <p>Configure your thermal printer for bills and receipts.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="article-arrow"></i>
+                </a>
+                <a href="#" class="article-card">
+                    <div class="article-icon">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
+                    <div class="article-content">
+                        <h4>How to process refunds</h4>
+                        <p>Step-by-step guide to handling order refunds.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="article-arrow"></i>
+                </a>
+                <a href="#" class="article-card">
+                    <div class="article-icon">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <div class="article-content">
+                        <h4>Customizing your website</h4>
+                        <p>Personalize your restaurant's online presence.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="article-arrow"></i>
+                </a>
+                <a href="#" class="article-card">
+                    <div class="article-icon">
+                        <i data-lucide="bell"></i>
+                    </div>
+                    <div class="article-content">
+                        <h4>Notification settings</h4>
+                        <p>Configure email and push notification preferences.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="article-arrow"></i>
+                </a>
+                <a href="#" class="article-card">
+                    <div class="article-icon">
+                        <i data-lucide="download"></i>
+                    </div>
+                    <div class="article-content">
+                        <h4>Exporting reports</h4>
+                        <p>Download your data in PDF or Excel format.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="article-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-support">
+        <div class="container">
+            <div class="ai-support-grid">
+                <div class="ai-support-content">
+                    <h2>Get Instant Answers with AI</h2>
+                    <p>Our AI Assistant is trained on all Resezy features and documentation. Get instant answers to your questions 24/7, without waiting for a support agent.</p>
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <i data-lucide="check-circle"></i>
+                            Available 24/7
+                        </div>
+                        <div class="ai-feature">
+                            <i data-lucide="check-circle"></i>
+                            Instant responses
+                        </div>
+                        <div class="ai-feature">
+                            <i data-lucide="check-circle"></i>
+                            Trained on all features
+                        </div>
+                        <div class="ai-feature">
+                            <i data-lucide="check-circle"></i>
+                            Guides you step-by-step
+                        </div>
+                    </div>
+                    <a href="ai-assistant.html" class="btn btn-primary btn-lg">
+                        Chat with AI Assistant
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="ai-support-preview">
+                    <div class="ai-preview-header">
+                        <div class="ai-preview-avatar">
+                            <i data-lucide="bot"></i>
+                        </div>
+                        <div class="ai-preview-info">
+                            <h4>Resezy AI Assistant</h4>
+                            <p><span style="width:8px;height:8px;background:#10b981;border-radius:50%;display:inline-block;margin-right:6px;"></span>Online</p>
+                        </div>
+                    </div>
+                    <div class="ai-preview-messages">
+                        <div class="ai-preview-message bot">
+                            Hello! I'm Resezy AI Assistant. How can I help you today?
+                        </div>
+                        <div class="ai-preview-message user">
+                            How do I set up bKash payment?
+                        </div>
+                        <div class="ai-preview-message bot">
+                            Great question! Here's how to set up bKash: Go to Settings > Payment Methods > bKash, then enter your merchant credentials. Would you like me to walk you through each step?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="headphones"></i>
+                    Contact Support
+                </span>
+                <h2 class="section-title">Need More Help?</h2>
+                <p class="section-subtitle">Our support team is here to assist you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <h3 class="contact-title">Email Support</h3>
+                    <p class="contact-text">Send us an email and we'll respond within 24 hours.</p>
+                    <p class="contact-info">support@resezy.com</p>
+                    <span class="contact-hours">Response time: 24 hours</span>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                    <h3 class="contact-title">Live Chat</h3>
+                    <p class="contact-text">Chat with our support team in real-time for quick help.</p>
+                    <p class="contact-info">Start Chat</p>
+                    <span class="contact-hours">Available: 9 AM - 10 PM</span>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <h3 class="contact-title">Phone Support</h3>
+                    <p class="contact-text">Call us directly for urgent issues (Premium & Enterprise).</p>
+                    <p class="contact-info">+880 1XXX-XXXXXX</p>
+                    <span class="contact-hours">Mon-Sat: 9 AM - 6 PM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Still Have Questions?</h2>
+            <p class="cta-subtitle">Can't find what you're looking for? Contact us directly and we'll help you out.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                    Contact Us
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="faq.html" class="btn btn-secondary btn-lg">
+                    Browse FAQ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        Resezy
+                    </a>
+                    <p>Complete restaurant management platform built for modern restaurants. Manage orders, inventory, staff, and more.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="packages.html" class="footer-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="clients.html" class="footer-link">Clients</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="support.html" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="support.html" class="footer-link">Help Center</a></li>
+                        <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@resezy.com" class="footer-link">support@resezy.com</a></li>
+                        <li><a href="tel:+8801XXXXXXXXX" class="footer-link">+880 1XXX-XXXXXX</a></li>
+                        <li><span class="footer-link">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2025 Resezy. All rights reserved. Developed by Bridge Byte Tech.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

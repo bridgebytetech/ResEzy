@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Resezy and Bridge Byte Tech - The team behind the leading restaurant management platform in Bangladesh.">
+    <meta name="keywords" content="about resezy, bridge byte tech, restaurant software company, bangladesh tech startup">
+    <meta name="author" content="Bridge Byte Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="About Us - Resezy Restaurant Management">
+    <meta property="og:description" content="Meet the team behind Resezy - Building the future of restaurant management.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resezy.com/about">
+    <link rel="canonical" href="https://resezy.com/about">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>About Us - Resezy Restaurant Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .about-hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .about-hero-content h1 span {
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .about-hero-content p {
+            font-size: 18px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .about-hero-image {
+            position: relative;
+        }
+        .about-hero-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+        }
+        .about-hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .about-hero-badge-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+        .about-hero-badge-text h4 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .about-hero-badge-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+        .story-section {
+            padding: 100px 0;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .story-image {
+            position: relative;
+        }
+        .story-image img {
+            width: 100%;
+            border-radius: 24px;
+        }
+        .story-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        .story-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .values-section {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .value-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+        }
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--accent);
+        }
+        .value-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .value-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .team-section {
+            padding: 100px 0;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .team-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+        }
+        .team-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .team-role {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .team-bio {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .team-social a {
+            width: 36px;
+            height: 36px;
+            background: var(--gray-100);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        .team-social a:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .company-section {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+        .company-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .company-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        .company-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .company-stat {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        .company-stat h3 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .company-stat p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+        .company-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+        .milestone-section {
+            padding: 100px 0;
+        }
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .milestone-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .milestone-year {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .milestone-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .milestone-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .partners-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        .partners-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .partner-logo {
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+        .partner-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+        @media (max-width: 1024px) {
+            .values-grid,
+            .team-grid,
+            .milestone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .about-hero-grid,
+            .story-grid,
+            .company-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-hero-content h1 {
+                font-size: 36px;
+            }
+            .about-hero-badge {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 20px;
+            }
+            .values-grid,
+            .team-grid,
+            .milestone-grid {
+                grid-template-columns: 1fr;
+            }
+            .company-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    Resezy
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="features.html" class="nav-link">Features</a></li>
+                        <li><a href="packages.html" class="nav-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="features.html" class="mobile-menu-link">Features</a></li>
+                <li><a href="packages.html" class="mobile-menu-link">Pricing</a></li>
+                <li><a href="how-it-works.html" class="mobile-menu-link">How It Works</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="clients.html" class="mobile-menu-link">Clients</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="support.html" class="mobile-menu-link">Support</a></li>
+            </ul>
+            <div class="mobile-menu-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-grid">
+                <div class="about-hero-content">
+                    <h1>We're Building the Future of <span>Restaurant Tech</span></h1>
+                    <p>Resezy is a product of Bridge Byte Tech, a software development company passionate about creating innovative solutions for the food service industry. We believe technology should make running a restaurant easier, not harder.</p>
+                    <p>Our mission is to empower restaurant owners with tools that save time, reduce costs, and help them focus on what they do best - serving great food.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        Get In Touch
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="about-hero-image">
+                    <img src="images/about-hero.jpg" alt="Resezy Team">
+                    <div class="about-hero-badge">
+                        <div class="about-hero-badge-icon">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="about-hero-badge-text">
+                            <h4>500+</h4>
+                            <p>Happy Restaurants</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="images/our-story.jpg" alt="Our Story">
+                </div>
+                <div class="story-content">
+                    <span class="section-label">
+                        <i data-lucide="book-open"></i>
+                        Our Story
+                    </span>
+                    <h2>From Idea to Innovation</h2>
+                    <p>Resezy was born out of a simple observation: restaurant owners spend too much time on administrative tasks and not enough time creating great dining experiences.</p>
+                    <p>We saw restaurant owners struggling with paper-based systems, juggling multiple apps for different tasks, and losing money due to inefficiencies. We knew there had to be a better way.</p>
+                    <p>In 2024, our team at Bridge Byte Tech set out to build a comprehensive solution that would address all the challenges restaurants face - from order management and POS to staff scheduling and inventory control.</p>
+                    <p>Today, Resezy serves over 500 restaurants across Bangladesh, processing thousands of orders every day and helping restaurant owners save time and grow their businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="heart"></i>
+                    Our Values
+                </span>
+                <h2 class="section-title">What We Stand For</h2>
+                <p class="section-subtitle">The principles that guide everything we do at Resezy.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i data-lucide="lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-text">We constantly push boundaries to create better solutions for the restaurant industry.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="value-title">Customer First</h3>
+                    <p class="value-text">Every decision we make is driven by what's best for our restaurant partners.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3 class="value-title">Reliability</h3>
+                    <p class="value-text">We build robust systems that restaurants can depend on every single day.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3 class="value-title">Simplicity</h3>
+                    <p class="value-text">We believe powerful software should be easy to use for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="users"></i>
+                    Our Team
+                </span>
+                <h2 class="section-title">Meet the People Behind Resezy</h2>
+                <p class="section-subtitle">A passionate team dedicated to transforming the restaurant industry.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">AS</div>
+                    <h3 class="team-name">Ahmed Shahriar</h3>
+                    <p class="team-role">Founder & CEO</p>
+                    <p class="team-bio">Visionary leader with 10+ years in tech. Passionate about empowering small businesses.</p>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">FR</div>
+                    <h3 class="team-name">Farhana Rahman</h3>
+                    <p class="team-role">CTO</p>
+                    <p class="team-bio">Tech expert leading our engineering team. Focused on building scalable solutions.</p>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">KH</div>
+                    <h3 class="team-name">Karim Hossain</h3>
+                    <p class="team-role">Head of Product</p>
+                    <p class="team-bio">Product strategist ensuring Resezy meets real restaurant needs.</p>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">NA</div>
+                    <h3 class="team-name">Nadia Akter</h3>
+                    <p class="team-role">Head of Customer Success</p>
+                    <p class="team-bio">Dedicated to helping every restaurant succeed with Resezy.</p>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-section">
+        <div class="container">
+            <div class="company-grid">
+                <div class="company-content">
+                    <span class="section-label">
+                        <i data-lucide="building-2"></i>
+                        Bridge Byte Tech
+                    </span>
+                    <h2>The Company Behind Resezy</h2>
+                    <p>Bridge Byte Tech is a Dhaka-based software development company specializing in SaaS solutions for businesses. We combine deep industry knowledge with cutting-edge technology to create products that make a real difference.</p>
+                    <p>Our team of experienced developers, designers, and product managers work together to build software that's powerful yet easy to use. We're committed to quality, innovation, and customer success.</p>
+                    <div class="company-stats">
+                        <div class="company-stat">
+                            <h3>2024</h3>
+                            <p>Founded</p>
+                        </div>
+                        <div class="company-stat">
+                            <h3>25+</h3>
+                            <p>Team Members</p>
+                        </div>
+                        <div class="company-stat">
+                            <h3>500+</h3>
+                            <p>Clients Served</p>
+                        </div>
+                        <div class="company-stat">
+                            <h3>99.9%</h3>
+                            <p>Uptime</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-image">
+                    <img src="images/company-office.jpg" alt="Bridge Byte Tech Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="milestone-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="flag"></i>
+                    Our Journey
+                </span>
+                <h2 class="section-title">Key Milestones</h2>
+                <p class="section-subtitle">The important moments that shaped Resezy.</p>
+            </div>
+            <div class="milestone-grid">
+                <div class="milestone-card">
+                    <div class="milestone-year">2024</div>
+                    <h3 class="milestone-title">Company Founded</h3>
+                    <p class="milestone-text">Bridge Byte Tech was established with a vision to transform restaurant operations.</p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-year">2024</div>
+                    <h3 class="milestone-title">Resezy Launched</h3>
+                    <p class="milestone-text">First version of Resezy released with core POS and order management features.</p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-year">2024</div>
+                    <h3 class="milestone-title">100 Restaurants</h3>
+                    <p class="milestone-text">Reached our first milestone of 100 active restaurant partners.</p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-year">2025</div>
+                    <h3 class="milestone-title">500+ Clients</h3>
+                    <p class="milestone-text">Serving over 500 restaurants with expanded features and AI integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Active Restaurants</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50,000+</h3>
+                    <p>Orders Processed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Team Members</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.9/5</h3>
+                    <p>Customer Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Join Us?</h2>
+            <p class="cta-subtitle">Become part of the Resezy family and transform your restaurant operations today.</p>
+            <div class="cta-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">
+                    Start Free Trial
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-secondary btn-lg">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        Resezy
+                    </a>
+                    <p>Complete restaurant management platform built for modern restaurants. Manage orders, inventory, staff, and more.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="packages.html" class="footer-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="clients.html" class="footer-link">Clients</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="support.html" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="support.html" class="footer-link">Help Center</a></li>
+                        <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@resezy.com" class="footer-link">support@resezy.com</a></li>
+                        <li><a href="tel:+8801XXXXXXXXX" class="footer-link">+880 1XXX-XXXXXX</a></li>
+                        <li><span class="footer-link">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2025 Resezy. All rights reserved. Developed by Bridge Byte Tech.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See what our clients say about Resezy - Testimonials and success stories from restaurants using our management platform.">
+    <meta name="keywords" content="resezy clients, restaurant testimonials, customer reviews, success stories">
+    <meta name="author" content="Bridge Byte Tech">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Our Clients - Resezy Restaurant Management">
+    <meta property="og:description" content="Discover how restaurants are transforming their operations with Resezy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resezy.com/clients">
+    <link rel="canonical" href="https://resezy.com/clients">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Our Clients - Resezy Restaurant Management Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .clients-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            text-align: center;
+        }
+        .clients-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .clients-hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .clients-stats {
+            padding: 60px 0;
+            background: var(--primary);
+        }
+        .clients-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        .clients-stat h3 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .clients-stat p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .logos-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        .logos-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .logos-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .logos-header p {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+        }
+        .logo-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            transition: all 0.3s ease;
+        }
+        .logo-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
+        }
+        .logo-placeholder {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-align: center;
+        }
+        .testimonials-section {
+            padding: 100px 0;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .testimonial-card-lg {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card-lg:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .testimonial-avatar-lg {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+        }
+        .testimonial-info-lg h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .testimonial-info-lg p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .testimonial-rating-lg {
+            display: flex;
+            gap: 4px;
+            color: var(--warning);
+            margin-bottom: 20px;
+        }
+        .testimonial-text-lg {
+            font-size: 16px;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .testimonial-stats {
+            display: flex;
+            gap: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-100);
+        }
+        .testimonial-stat {
+            text-align: center;
+        }
+        .testimonial-stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .testimonial-stat-label {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .featured-story {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .featured-image {
+            position: relative;
+        }
+        .featured-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .featured-content span {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+        .featured-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .featured-content blockquote {
+            font-size: 18px;
+            color: var(--text);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 30px;
+            padding-left: 24px;
+            border-left: 4px solid var(--accent);
+        }
+        .featured-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .featured-author-avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+        }
+        .featured-author-info h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .featured-author-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .featured-results {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .featured-result {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        .featured-result-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .featured-result-label {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        .industries-section {
+            padding: 100px 0;
+        }
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .industry-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+        }
+        .industry-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent);
+        }
+        .industry-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .industry-count {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .video-testimonials {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .video-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+        .video-thumbnail {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-play {
+            width: 70px;
+            height: 70px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .video-play:hover {
+            transform: scale(1.1);
+            background: var(--accent-hover);
+        }
+        .video-play i {
+            margin-left: 4px;
+        }
+        .video-content {
+            padding: 24px;
+        }
+        .video-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .video-restaurant {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .reviews-wall {
+            padding: 100px 0;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        .review-card:hover {
+            border-color: var(--accent);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .review-avatar {
+            width: 44px;
+            height: 44px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .review-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .review-info p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .review-rating {
+            display: flex;
+            gap: 2px;
+            color: var(--warning);
+            margin-bottom: 12px;
+        }
+        .review-rating i {
+            width: 14px;
+            height: 14px;
+        }
+        .review-text {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+        @media (max-width: 1024px) {
+            .clients-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .logos-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .clients-hero h1 {
+                font-size: 36px;
+            }
+            .clients-stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            .clients-stat h3 {
+                font-size: 36px;
+            }
+            .logos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials-grid,
+            .industries-grid,
+            .video-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .featured-content h2 {
+                font-size: 28px;
+            }
+            .featured-results {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    Resezy
+                </a>
+                <nav class="nav">
+                    <ul class="nav-links">
+                        <li><a href="features.html" class="nav-link">Features</a></li>
+                        <li><a href="packages.html" class="nav-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="get-started.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-menu-links">
+                <li><a href="features.html" class="mobile-menu-link">Features</a></li>
+                <li><a href="packages.html" class="mobile-menu-link">Pricing</a></li>
+                <li><a href="how-it-works.html" class="mobile-menu-link">How It Works</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="clients.html" class="mobile-menu-link">Clients</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="support.html" class="mobile-menu-link">Support</a></li>
+            </ul>
+            <div class="mobile-menu-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="clients-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i data-lucide="chevron-right"></i>
+                <span>Clients</span>
+            </div>
+            <h1>Trusted by 500+ Restaurants</h1>
+            <p>See how restaurants across Bangladesh are transforming their operations with Resezy.</p>
+        </div>
+    </section>
+
+    <section class="clients-stats">
+        <div class="container">
+            <div class="clients-stats-grid">
+                <div class="clients-stat">
+                    <h3>500+</h3>
+                    <p>Active Restaurants</p>
+                </div>
+                <div class="clients-stat">
+                    <h3>50,000+</h3>
+                    <p>Orders Processed</p>
+                </div>
+                <div class="clients-stat">
+                    <h3>4.9/5</h3>
+                    <p>Average Rating</p>
+                </div>
+                <div class="clients-stat">
+                    <h3>98%</h3>
+                    <p>Customer Retention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="logos-section">
+        <div class="container">
+            <div class="logos-header">
+                <h2>Restaurants That Trust Us</h2>
+                <p>From small cafes to large restaurant chains</p>
+            </div>
+            <div class="logos-grid">
+                <div class="logo-card">
+                    <div class="logo-placeholder">Spice Garden</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Cafe Bliss</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">The Food Court</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Royal Kitchen</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Biryani House</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Pizza Palace</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Sushi Express</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Burger Joint</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Thai Delight</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Coffee Corner</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Grill Master</div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-placeholder">Sweet Treats</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="message-square"></i>
+                    Testimonials
+                </span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Real feedback from restaurant owners using Resezy every day.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card-lg">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar-lg">RK</div>
+                        <div class="testimonial-info-lg">
+                            <h4>Rahim Khan</h4>
+                            <p>Owner, Spice Garden</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating-lg">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="testimonial-text-lg">"Resezy completely transformed how we manage our restaurant. The order management system is incredibly intuitive, and the inventory tracking has saved us thousands in food waste. Our efficiency has improved by 40% since we started using it."</p>
+                    <div class="testimonial-stats">
+                        <div class="testimonial-stat">
+                            <div class="testimonial-stat-value">40%</div>
+                            <div class="testimonial-stat-label">More Efficient</div>
+                        </div>
+                        <div class="testimonial-stat">
+                            <div class="testimonial-stat-value">2hrs</div>
+                            <div class="testimonial-stat-label">Saved Daily</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card-lg">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar-lg">SA</div>
+                        <div class="testimonial-info-lg">
+                            <h4>Sabina Ahmed</h4>
+                            <p>Manager, Cafe Bliss</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating-lg">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="testimonial-text-lg">"The staff management module is a game-changer. Tracking attendance, managing leaves, and processing salaries used to take hours. Now it's all automated. The support team is also incredibly responsive and helpful."</p>
+                    <div class="testimonial-stats">
+                        <div class="testimonial-stat">
+                            <div class="testimonial-stat-value">95%</div>
+                            <div class="testimonial-stat-label">Less Paperwork</div>
+                        </div>
+                        <div class="testimonial-stat">
+                            <div class="testimonial-stat-value">30min</div>
+                            <div class="testimonial-stat-label">Payroll Time</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card-lg">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar-lg">MH</div>
+                        <div class="testimonial-info-lg">
+                            <h4>Mahbub Hasan</h4>
+                            <p>Owner, The Food Court</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating-lg">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="testimonial-text-lg">"We switched from paper-based ordering to Resezy and the difference is night and day. The analytics help us understand our business better, and the online ordering feature has brought in many new customers."</p>
+                    <div class="testimonial-stats">
+                        <div class="testimonial-stat">
+                            <div class="testimonial-stat-value">35%</div>
+                            <div class="testimonial-stat-label">More Orders</div>
+                        </div>
+                        <div class="testimonial-stat">
+                            <div class="testimonial-stat-value">50%</div>
+                            <div class="testimonial-stat-label">Faster Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-story">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-image">
+                    <img src="images/case-study.jpg" alt="Royal Kitchen Success Story">
+                    <div class="featured-badge">Success Story</div>
+                </div>
+                <div class="featured-content">
+                    <span>Featured Case Study</span>
+                    <h2>How Royal Kitchen Increased Revenue by 45% with Resezy</h2>
+                    <blockquote>
+                        "Before Resezy, we were losing track of orders, struggling with inventory, and had no insight into our finances. Within 3 months of using Resezy, we completely turned things around. Our revenue increased by 45%, and we finally have control over our operations."
+                    </blockquote>
+                    <div class="featured-author">
+                        <div class="featured-author-avatar">TI</div>
+                        <div class="featured-author-info">
+                            <h4>Tanvir Islam</h4>
+                            <p>Owner, Royal Kitchen - Gulshan</p>
+                        </div>
+                    </div>
+                    <div class="featured-results">
+                        <div class="featured-result">
+                            <div class="featured-result-value">45%</div>
+                            <div class="featured-result-label">Revenue Increase</div>
+                        </div>
+                        <div class="featured-result">
+                            <div class="featured-result-value">60%</div>
+                            <div class="featured-result-label">Less Food Waste</div>
+                        </div>
+                        <div class="featured-result">
+                            <div class="featured-result-value">3x</div>
+                            <div class="featured-result-label">Faster Orders</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industries-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="building-2"></i>
+                    Industries We Serve
+                </span>
+                <h2 class="section-title">Built for Every Type of Restaurant</h2>
+                <p class="section-subtitle">Resezy adapts to your unique business needs.</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    <h3 class="industry-title">Fine Dining</h3>
+                    <p class="industry-count">120+ restaurants</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i data-lucide="coffee"></i>
+                    </div>
+                    <h3 class="industry-title">Cafes</h3>
+                    <p class="industry-count">150+ cafes</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i data-lucide="pizza"></i>
+                    </div>
+                    <h3 class="industry-title">Fast Food</h3>
+                    <p class="industry-count">100+ outlets</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i data-lucide="chef-hat"></i>
+                    </div>
+                    <h3 class="industry-title">Cloud Kitchens</h3>
+                    <p class="industry-count">80+ kitchens</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="video"></i>
+                    Video Testimonials
+                </span>
+                <h2 class="section-title">Hear From Our Clients</h2>
+                <p class="section-subtitle">Watch real stories from restaurant owners.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-play">
+                            <i data-lucide="play" size="28"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">From Chaos to Control</h3>
+                        <p class="video-restaurant">Biryani House - Dhanmondi</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-play">
+                            <i data-lucide="play" size="28"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Growing with Resezy</h3>
+                        <p class="video-restaurant">Pizza Palace - Uttara</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="video-play">
+                            <i data-lucide="play" size="28"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Our Digital Journey</h3>
+                        <p class="video-restaurant">Thai Delight - Banani</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-wall">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">
+                    <i data-lucide="star"></i>
+                    Recent Reviews
+                </span>
+                <h2 class="section-title">Wall of Love</h2>
+                <p class="section-subtitle">Latest reviews from our happy customers.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">NH</div>
+                        <div class="review-info">
+                            <h4>Nafis Hossain</h4>
+                            <p>Grill Master</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">Best restaurant software I've ever used. Simple and powerful!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">FR</div>
+                        <div class="review-info">
+                            <h4>Farhana Rahman</h4>
+                            <p>Sweet Treats</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">The inventory management alone is worth the price. No more stockouts!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">AS</div>
+                        <div class="review-info">
+                            <h4>Arif Siddique</h4>
+                            <p>Burger Joint</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">Our order accuracy improved from 85% to 99%. Customers love it!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">SM</div>
+                        <div class="review-info">
+                            <h4>Shahana Mitul</h4>
+                            <p>Sushi Express</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">Support team is amazing. They helped us set up everything perfectly.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">KA</div>
+                        <div class="review-info">
+                            <h4>Kamal Ahmed</h4>
+                            <p>Coffee Corner</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">Finally a POS that actually makes sense. Highly recommended!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">NJ</div>
+                        <div class="review-info">
+                            <h4>Nadia Jahan</h4>
+                            <p>Thai Kitchen</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">The financial reports help me understand where my money goes.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">RH</div>
+                        <div class="review-info">
+                            <h4>Rafiq Haque</h4>
+                            <p>Deshi Bites</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">Online ordering brought us 30% more customers. Incredible!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">TS</div>
+                        <div class="review-info">
+                            <h4>Tasnim Sultana</h4>
+                            <p>Cake Palace</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                        <i data-lucide="star" fill="currentColor"></i>
+                    </div>
+                    <p class="review-text">Easy to use, great features, excellent price. What more could you ask?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Join Our Growing Community</h2>
+            <p class="cta-subtitle">Be part of the 500+ restaurants already transforming their business with Resezy.</p>
+            <div class="cta-actions">
+                <a href="get-started.html" class="btn btn-primary btn-lg">
+                    Start Free Trial
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-secondary btn-lg">
+                    Talk to Sales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        Resezy
+                    </a>
+                    <p>Complete restaurant management platform built for modern restaurants. Manage orders, inventory, staff, and more.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="features.html" class="footer-link">Features</a></li>
+                        <li><a href="packages.html" class="footer-link">Pricing</a></li>
+                        <li><a href="how-it-works.html" class="footer-link">How It Works</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="clients.html" class="footer-link">Clients</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="support.html" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="support.html" class="footer-link">Help Center</a></li>
+                        <li><a href="get-started.html" class="footer-link">Get Started</a></li>
+                        <li><a href="ai-assistant.html" class="footer-link">AI Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@resezy.com" class="footer-link">support@resezy.com</a></li>
+                        <li><a href="tel:+8801XXXXXXXXX" class="footer-link">+880 1XXX-XXXXXX</a></li>
+                        <li><span class="footer-link">Dhaka, Bangladesh</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">2025 Resezy. All rights reserved. Developed by Bridge Byte Tech.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
