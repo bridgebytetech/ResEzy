@@ -24,18 +24,35 @@ function initHeader() {
 function initMobileMenu() {
     const toggle = document.querySelector('.mobile-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const header = document.querySelector('.header');
     const mobileLinks = document.querySelectorAll('.mobile-menu-link');
     
     if (!toggle || !mobileMenu) return;
     
     toggle.addEventListener('click', function() {
         mobileMenu.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        toggle.classList.toggle('active');
+        
+        if (header) {
+            header.classList.toggle('menu-open');
+        }
+        
+        if (mobileMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     });
     
     mobileLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             mobileMenu.classList.remove('active');
+            toggle.classList.remove('active');
+            
+            if (header) {
+                header.classList.remove('menu-open');
+            }
+            
             document.body.style.overflow = '';
         });
     });
