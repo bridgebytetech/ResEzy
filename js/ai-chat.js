@@ -238,7 +238,7 @@ function scrollToBottom() {
 }
 
 async function generateResponse(userMessage) {
-    if (AI_CONFIG.apiKey === 'YOUR_GEMINI_API_KEY') {
+    if (AI_CONFIG.apiKey === 'AIzaSyC8vfWsvjBmgID7y9XhDpQH1tLyJzIQMMI') {
         setTimeout(function() {
             hideTypingIndicator();
             const response = getOfflineResponse(userMessage);
