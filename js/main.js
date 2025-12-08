@@ -24,37 +24,49 @@ function initHeader() {
 function initMobileMenu() {
     const toggle = document.querySelector('.mobile-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const header = document.querySelector('.header');
+    const closeBtn = document.getElementById('mobileMenuClose');
     const mobileLinks = document.querySelectorAll('.mobile-menu-link');
     
     if (!toggle || !mobileMenu) return;
     
-    toggle.addEventListener('click', function() {
-        mobileMenu.classList.toggle('active');
-        toggle.classList.toggle('active');
+    function openMenu() {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
         
-        if (header) {
-            header.classList.toggle('menu-open');
-        }
-        
-        if (mobileMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    });
+        setTimeout(function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }, 100);
+    }
+    
+    function closeMenu() {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    toggle.addEventListener('click', openMenu);
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+    }
     
     mobileLinks.forEach(function(link) {
         link.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            toggle.classList.remove('active');
-            
-            if (header) {
-                header.classList.remove('menu-open');
-            }
-            
-            document.body.style.overflow = '';
+            closeMenu();
         });
+    });
+    
+    mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+            closeMenu();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMenu();
+        }
     });
 }
 
